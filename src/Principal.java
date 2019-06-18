@@ -30,27 +30,29 @@ public class Principal {
 				
 				s = br.readLine();
 				
-              }	
+              		}	
 			Transicao t = new Transicao();
 			for (int i = 0 ; i < transicao.size(); i++) {
 				t = transicao.get(i);
 				t.imprime();
 			}
-			BufferedReader bre2 = new BufferedReader(new FileReader("src/Arquivo.txt"));
 			
-			//StringTokenizer st = new StringTokenizer(s, "");
-			
-			String str2 = bre2.readLine();  
-			int estadoInicial = Integer.parseInt(str2);
+			String s1 = br.readLine();  
+			int estadoInicial = Integer.parseInt(s1);
+			System.out.println(estadoInicial);
 			
 			
+			List<Integer> estadoFinal = new ArrayList<>();
+			estadoFinal.add(Integer.parseInt(br.readLine()));
 			
-			BufferedReader bre = new BufferedReader(new FileReader("src/Arquivo.txt"));
-			String str = bre.readLine();  
-			int estadoFinal = Integer.parseInt(str);
+			List <String> palavra = new ArrayList<>();
+			String s2 = br.readLine();
 			
-			BufferedReader bre3 = new BufferedReader(new FileReader("src/Arquivo.txt"));
-			String s2 = br.readLine();  
+			while(s2 != null) {
+				StringTokenizer st = new StringTokenizer(s2, "");
+				palavra.add(s2);
+				
+			}
 			
 			while(s2 != null) { 
 				
@@ -67,13 +69,6 @@ public class Principal {
 				s = br.readLine();
 				
               }	
-			
-			
-			
-			String str3 = bre.readLine(); 
-			int n = 
-			
-			
 			
 			
 			for(int i = 0; i < transicao.size(); i++) {
