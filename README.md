@@ -24,6 +24,7 @@ Senão retorna falso
 Retorna S está em F ? verdadeiro : falso
 Observação: A escolha da estrutura de dados a ser utilizada fica a critério do aluno, sendo assim, pode ser entre array, arrayList, LinkedList ou TreeMap.
 Exemplo de um arquivo de entrada
+
 1 a 3
 3 b 5
 5 a 3
