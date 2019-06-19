@@ -37,55 +37,54 @@ public class Principal {
 				t.imprime();
 			}
 			
-			String s1 = br.readLine();  
-			int estadoInicial = Integer.parseInt(s1);
-			System.out.println(estadoInicial);
+			 
+			int estadoInicial = Integer.parseInt(br.readLine());
+			System.out.println("Estado Inicial: " + estadoInicial);
 			
 			
 			List<Integer> estadoFinal = new ArrayList<>();
-			estadoFinal.add(Integer.parseInt(br.readLine()));
+			s = br.readLine();
 			
-			List <String> palavra = new ArrayList<>();
-			String s2 = br.readLine();
+			StringTokenizer st = new StringTokenizer(s, " ");
 			
-			while(s2 != null) {
-				StringTokenizer st = new StringTokenizer(s2, "");
-				palavra.add(s2);
+			while(st.hasMoreTokens()) {
+				estadoFinal.add(Integer.parseInt(st.nextToken()));
 				
 			}
 			
-			while(s2 != null) { 
-				
-				StringTokenizer st = new StringTokenizer(s2, "");
-				
-				Transicao t = new Transicao();
-				
-				t.setEstadoInicial(Integer.parseInt(st.nextToken()));
-				t.setSimbolo(st.nextToken().charAt(0));
-				t.setEstadoFinal(Integer.parseInt(st.nextToken()));
-				
-				transicao.add(t);
-				
-				s = br.readLine();
-				
-              }	
+			for(int g : estadoFinal) {
+				System.out.println("Estado Final: " + g);
+			}
 			
+			s = br.readLine();
+			List <String> listaAceita = new ArrayList<>();
 			
-			for(int i = 0; i < transicao.size(); i++) {
+			while(s != null) {
+				int i = 0;
+				int estadoAtual = estadoInicial;
 				
-				for(int j = 0; j < transicao.size();j++) {
-					Transicao t1 = transicao.get(j);
-					//Transicao t2 = new Transicao();
+				while(i < s.length()) {
+					char c = s.charAt(i);
 					
-					if(t1.getEstadoInicial()== estadoInicial) {
-						if(t1.getSimbolo() == ) {
-							
-						}
+					for(Transicao t1 : transicao) {
 						
+						if(estadoAtual == t1.getEstadoInicial() && c ==t1.getSimbolo()) {
+							estadoAtual = t1.getEstadoFinal();
+						}
 					}
-					
-					transicao.get(i).getSimbolo();		
+					i++;
 				}
+				for(int f : estadoFinal) {
+					if(estadoAtual == f) {
+						listaAceita.add(s);
+					}
+				}
+				
+				s = br.readLine();	
+			}
+			
+			for (String str : listaAceita) {
+				System.out.println("Ordem Aceita: " + str);
 			}
 			
 		}catch(Exception e){
