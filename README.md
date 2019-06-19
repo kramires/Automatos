@@ -24,41 +24,75 @@ Senão retorna falso
 Retorna S está em F ? verdadeiro : falso
 Observação: A escolha da estrutura de dados a ser utilizada fica a critério do aluno, sendo assim, pode ser entre array, arrayList, LinkedList ou TreeMap.
 Exemplo de um arquivo de entrada
-
 1 a 3
+
 3 b 5
+
 5 a 3
+
 5 c 8
+
 5 0 17
+
 5 9 17
+
 5 8 17
+
 5 7 17
+
 5 6 17
+
 5 5 17
+
 5 4 17
+
 5 3 17
+
 5 2 17
+
 5 1 17
+
 17 1 17
+
 17 2 17
+
 17 3 17
+
+
 17 4 17
+
 17 5 17
+
 17 6 17
+
 17 7 17
+
 17 8 17
+
 17 9 17
+
 17 0 17
+
 17 c 8
+
 8 d 4
+
 4 c 8
+
 -1
+
 1
+
 4
+
 abab123cd
+
 aab56dc
+
 ab1cd
+
 ababcdcdcd
+
 O AFD deste exemplo tem 6 estados (1, 3, 5, 17, 8, 4) e 27 transições. O estado inicial é 1 e há apenas um estado final (4). O AFD reconhece as cadeias de caracteres a, b, c, d e dígitos decimais geradas pela expressão regular (ab) + [0-9] * (cd) +. A saída gerada pelo programa é:
 ab1cd
 abab123cd
