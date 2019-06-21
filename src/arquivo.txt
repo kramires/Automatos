@@ -26,3 +26,9 @@
 8 d 4
 4 c 8
 -1
+1
+4
+aab56dc
+ababcdcdcd
+ab1cd
+abab123cd
