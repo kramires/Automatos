@@ -83,10 +83,20 @@ public class Principal {
 				s = br.readLine();	
 			}
 			
-			for (String str : listaAceita) {
-				System.out.println("Ordem Aceita: " + str);
+			Set<String> ordenada = new TreeSet<String>();
+
+			for(String aceita : listaAceita) {
+				ordenada.add(aceita);
 			}
-			
+			System.out.println("Cadeias Aceitas: ");
+			for(String aceita : listaAceita) {
+				System.out.println(aceita);
+			}			
+			System.out.println("*********************");
+			System.out.println("Cadeia ordenada: ");
+			for(String aceita : ordenada) {
+				System.out.println(aceita);
+			}		
 		}catch(Exception e){
   			System.out.println("Erro: " + e.getMessage());
   			}
