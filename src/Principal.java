@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Principal {
 
@@ -12,7 +14,7 @@ public class Principal {
 		try
 		{
 			List <Transicao> transicao = new ArrayList<>();
-			BufferedReader br = new BufferedReader(new FileReader("src/Arquivo.txt"));
+                        BufferedReader br = new BufferedReader(new FileReader("src/arquivo.txt"));
 			
 			String s = br.readLine();  
 			
@@ -59,26 +61,35 @@ public class Principal {
 			s = br.readLine();
 			List <String> listaAceita = new ArrayList<>();
 			
-			while(s != null) {
-				int i = 0;
-				int estadoAtual = estadoInicial;
-				
-				while(i < s.length()) {
-					char c = s.charAt(i);
-					
-					for(Transicao t1 : transicao) {
-						
-						if(estadoAtual == t1.getEstadoInicial() && c ==t1.getSimbolo()) {
-							estadoAtual = t1.getEstadoFinal();
-						}
-					}
-					i++;
-				}
-				for(int f : estadoFinal) {
-					if(estadoAtual == f) {
-						listaAceita.add(s);
-					}
-				}
+                        while(s != null) {
+                                int i = 0;
+                                int estadoAtual = estadoInicial;
+                                boolean aceita = true;
+
+                                while(i < s.length() && aceita) {
+                                        char c = s.charAt(i);
+
+                                        boolean encontrou = false;
+                                        for(Transicao t1 : transicao) {
+                                                if(estadoAtual == t1.getEstadoInicial() && c == t1.getSimbolo()) {
+                                                        estadoAtual = t1.getEstadoFinal();
+                                                        encontrou = true;
+                                                        break;
+                                                }
+                                        }
+                                        if(!encontrou) {
+                                                aceita = false;
+                                        }
+                                        i++;
+                                }
+                                if(aceita) {
+                                        for(int f : estadoFinal) {
+                                                if(estadoAtual == f) {
+                                                        listaAceita.add(s);
+                                                        break;
+                                                }
+                                        }
+                                }
 				
 				s = br.readLine();	
 			}
